@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}KCPL Property Tax Estimator{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .upload-container, .info-container, .image-container {
+            margin-bottom: 20px;
+        }
+        .upload-container input[type="file"] {
+            display: none;
+        }
+        .upload-container label {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+        }
+        .upload-container input[type="submit"] {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        .info-container p, .image-container img {
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header class="container info-container">
+        <h1>KCPL Property Tax Estimator</h1>
+        <p>This app was created to enable the Kansas City Public Library to estimate their tax income from property taxes. Users can upload a CSV file containing up to 2000 property IDs. The column name must be <strong>parcel_number</strong>.</p>
+    </header>
+    <main class="container image-container">
+        <img src="{{ url_for('static', filename='Kansas city.png') }}" alt="Kansas City">
+    </main>
+    {% block content %}{% endblock %}
+</body>
+</html>

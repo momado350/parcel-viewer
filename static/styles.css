@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.upload-container, .info-container, .image-container, .error-container, .tax-container {
+    margin-bottom: 20px;
+}
+
+.upload-container input[type="file"] {
+    display: none;
+}
+
+.upload-container label {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+}
+
+.upload-container input[type="submit"], .tax-container .button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.info-container p, .image-container img, .error-container p, .tax-container p {
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* Adjust this value as needed */
+    border-radius: 8px;
+}
+.tax-containe {
+    white-space: pre-wrap; /* Ensures text maintains line breaks and spaces */
+    line-height: 1.5; /* Adjusts line spacing if needed */
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Upload File</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container info-container">
+        <h1>KCPL Property Tax Estimator</h1>
+        <div class="text-container"></div>
+            This app was created to enable the Kansas City Public Library to estimate their tax income from property taxes. Users can upload a CSV file containing up to 2000 property IDs. The column name must be <strong>parcel_number</strong>.
+        </div>
+    </div>
+    <div class="container image-container">
+        <img src="{{ url_for('static', filename='Kansas city.png') }}" alt="Kansas City">
+    </div>
+    <div class="container upload-container">
+        <h2>How to Use</h2>
+        <p>Upload your CSV file with the list of property IDs to get a downloadable property information file.</p>
+        <form method="post" enctype="multipart/form-data">
+            <label for="file">Choose CSV File</label>
+            <input type="file" name="file" id="file" accept=".csv, .xlsx, .txt">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+    <div class="container tax-container">
+        <h2>Calculate Tax Revenue</h2>
+        <div class="text-container">
+            The Tax Revenue Calculator applies a levy rate to a taxable value total As the following: (Taxable Value/100)*Levy Rate. Please specify your levy rate to calculate your estimated revenue. in 2023, the Kansas City Public Library had a levy rate of 0.4977.
+            You can lookup your levy rate at the county website.
+        </div>
+        
+        <a href="{{ url_for('calculate_tax_form') }}" class="button">Calculate Tax Revenue</a>
+    </div>
+</body>
+</html>

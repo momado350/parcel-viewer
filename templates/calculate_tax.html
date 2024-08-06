@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Calculate Tax Revenue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container info-container">
+        <h1>Calculate Tax Revenue</h1>
+        <p>Upload your CSV file with the `Taxable_Value_Total` column and enter the levy rate to calculate the tax revenue.</p>
+    </div>
+    <div class="container upload-container">
+        <form method="post" enctype="multipart/form-data">
+            <label for="file">Choose CSV File</label>
+            <input type="file" name="file" id="file" accept=".csv">
+            <br><br>
+            <label for="levy_rate">Enter Levy Rate:</label>
+            <input type="text" name="levy_rate" id="levy_rate" required>
+            <br><br>
+            <input type="submit" value="Calculate Tax Revenue">
+        </form>
+    </div>
+</body>
+</html>
