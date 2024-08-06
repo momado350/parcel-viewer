@@ -82,7 +82,7 @@ def upload_file():
         results_df.to_csv(output, index=False)
         output.seek(0)
         
-        return send_file(output, attachment_filename="results.csv", as_attachment=True, mimetype='text/csv')
+        return send_file(output, download_name="results.csv", as_attachment=True, mimetype='text/csv')
 
 @app.route('/calculate_tax')
 def calculate_tax_form():
