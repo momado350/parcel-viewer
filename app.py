@@ -122,7 +122,7 @@ def calculate_tax():
         df.to_csv(output, index=False)
         output.seek(0)
         
-        return send_file(output, attachment_filename="results_with_tax_revenue.csv", as_attachment=True, mimetype='text/csv')
+        return send_file(output, download_name="results_with_tax_revenue.csv", as_attachment=True, mimetype='text/csv')
 
 if __name__ == '__main__':
     from os import environ
