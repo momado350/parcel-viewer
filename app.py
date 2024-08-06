@@ -125,4 +125,5 @@ def calculate_tax():
         return send_file(output, attachment_filename="results_with_tax_revenue.csv", as_attachment=True, mimetype='text/csv')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    from os import environ
+    app.run(debug=True, host='0.0.0.0', port=int(environ.get('PORT', 5000)))
